@@ -429,7 +429,7 @@ DAC硬件上的连接方式,可选的配置：
     DAC_OUTPUT_LR                   立体声
     DAC_OUTPUT_MONO_LR_DIFF         单声道差分输出
 */
-#define TCFG_AUDIO_DAC_CONNECT_MODE    DAC_OUTPUT_MONO_R
+#define TCFG_AUDIO_DAC_CONNECT_MODE     DAC_OUTPUT_LR
 
 /*
 解码后音频的输出方式:
@@ -647,7 +647,7 @@ DAC硬件上的连接方式,可选的配置：
 #define TCFG_BT_SNIFF_ENABLE                0   //bt sniff 功能使能
 
 #define USER_SUPPORT_PROFILE_SPP    0
-#define USER_SUPPORT_PROFILE_HFP    0
+#define USER_SUPPORT_PROFILE_HFP    1
 #define USER_SUPPORT_PROFILE_A2DP   1
 #define USER_SUPPORT_PROFILE_AVCTP  1
 #define USER_SUPPORT_PROFILE_HID    1
