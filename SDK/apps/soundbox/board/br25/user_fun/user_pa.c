@@ -12,7 +12,7 @@ PA_CTL_IO pa_in_io = {
     .port_mute_io_status = USER_PA_MUTE_MODE,
     .port_ab_io_status = USER_PA_ABD_MODE,
 
-    .pa_mute_status = 0xff,
+    .pa_mute_status = 0x00,
     .pa_class_status = 0xff,
     .pa_power_off = 0,
 
@@ -125,7 +125,7 @@ void user_pa_in_abd_and_mute(void *pa,u8 cmd){
         gpio_set_pull_down(pa_ctrl->port_mute,0);
         gpio_set_pull_up(pa_ctrl->port_mute,0);
         gpio_set_die(pa_ctrl->port_mute,1);
-        gpio_set_output_value(pa_ctrl->port_mute,0);        
+        gpio_set_output_value(pa_ctrl->port_mute,0);
     }
 }
 
@@ -356,7 +356,7 @@ void user_pa_in_service(void *pa){
 
 /*
 检测单双线功放
-可以指定功放类型 
+可以指定功放类型
 */
 int user_pa_set_mode(void *pa){
     PA_IN_STRL *pa_ctrl = (PA_IN_STRL *)pa;
@@ -380,7 +380,7 @@ int user_pa_set_mode(void *pa){
     delay(60);
     //单双io类型检测
     if(gpio_read(pa_info->port_abd)){
-        pa_ctrl->pa_mode = PA_MODE_1;//双线 
+        pa_ctrl->pa_mode = PA_MODE_1;//双线
         puts(">>>>>> pa mode pin 2\n");
     }else{
         pa_ctrl->pa_mode = PA_MODE_2;//单线
@@ -388,17 +388,17 @@ int user_pa_set_mode(void *pa){
     }
 
     if(USER_PA_MODE_2 == USER_PA_CLASS){
-        pa_ctrl->pa_mode = PA_MODE_2;        
+        pa_ctrl->pa_mode = PA_MODE_2;
     }else if(USER_PA_MODE_1 == USER_PA_CLASS){
-        pa_ctrl->pa_mode = PA_MODE_1;//双线 
+        pa_ctrl->pa_mode = PA_MODE_1;//双线
     }
 
     if(USER_PA_MODE_1 == USER_PA_CLASS){
-        pa_ctrl->pa_mode = PA_MODE_1;        
+        pa_ctrl->pa_mode = PA_MODE_1;
     }
 
     //功放 mute abd控制方式检测
-    if(PA_MODE_1 == pa_ctrl->pa_mode){//双线        
+    if(PA_MODE_1 == pa_ctrl->pa_mode){//双线
         if(gpio_read(pa_info->port_mute)){
             pa_info->port_mute_io_status = USER_PA_MUTE_H;//高mute
         }else{
@@ -413,16 +413,16 @@ int user_pa_set_mode(void *pa){
         if(gpio_read(pa_info->port_abd)){
             pa_ctrl->pa_mode = PA_MODE_2;//电压控制
         }else{
-            pa_ctrl->pa_mode = PA_MODE_3;//脉冲控制  
+            pa_ctrl->pa_mode = PA_MODE_3;//脉冲控制
         }
     }
 
     if(USER_PA_MODE_1 == USER_PA_CLASS){
-        pa_ctrl->pa_mode = PA_MODE_1;        
+        pa_ctrl->pa_mode = PA_MODE_1;
     }else if(USER_PA_MODE_2 == USER_PA_CLASS){
         pa_ctrl->pa_mode = PA_MODE_2;
     }else if(USER_PA_MODE_3 == USER_PA_CLASS){
-        pa_ctrl->pa_mode = PA_MODE_3;        
+        pa_ctrl->pa_mode = PA_MODE_3;
     }
 
     printf(">>>>>>>>  pa mode %d ab%d mute%d\n",pa_ctrl->pa_mode,pa_info->port_ab_io_status,pa_info->port_mute_io_status);
@@ -445,9 +445,9 @@ int user_pa_in_pin_init(void *pa){
         return -1;
     }
 
-    
+
     if(PA_MODE_2 == pa_ctrl->pa_mode){
-        //单io控制条件不满足 
+        //单io控制条件不满足
         if(!pa_ctrl->abd_and_mute){
             puts("pa 2 pin error\n");
             pa_ctrl->pa_io->port_io_init_ok = 0;

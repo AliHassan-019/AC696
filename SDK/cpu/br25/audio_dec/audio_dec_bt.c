@@ -1253,7 +1253,7 @@ equal_loudness_hdl *equal_loudness_open_demo(u16 sample_rate, u8 ch_num)
 {
     equal_loudness_hdl *loudness = NULL;
     equalloudness_open_parm parm = {0};
-    parm.threadhold_vol = 17;
+    parm.threadhold_vol = 50;
     parm.sr = sample_rate;
     parm.channel = ch_num;
     parm.alpha_cb = get_alpha;
