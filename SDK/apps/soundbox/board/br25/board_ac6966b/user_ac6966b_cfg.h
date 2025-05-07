@@ -3,6 +3,19 @@
 
 #ifdef CONFIG_BOARD_AC6966B
 
+// ───────────────────────────────────────────────────────────────────────────────
+// Turn on TWS for AC6966B
+#undef  TCFG_USER_TWS_ENABLE
+#define TCFG_USER_TWS_ENABLE      1
+
+#undef  TCFG_BT_TWS_ENABLE       // on some SDK versions this flag also gates the low‐level TWS code
+#define TCFG_BT_TWS_ENABLE        1
+
+#undef  CONFIG_BT_MODE           // force normal BR‐EDR mode so the "disable‐if‐not‐NORMAL" block never trips
+#define CONFIG_BT_MODE            BT_NORMAL
+// ───────────────────────────────────────────────────────────────────────────────
+
+
 #define USER_SDK_BUG_3  ((TCFG_LINEIN_LR_CH == AUDIO_LIN_DACL_CH)||TCFG_LINEIN_LR_CH == AUDIO_LIN_DACR_CH)//linein 模式下 采用dac L进 dac R出的方式，播放提示音之后没声音
 #define USER_SDK_BUG_4  0//linein 模式下 普通通道进 dac出，播放提示音 有参杂linein声音
 

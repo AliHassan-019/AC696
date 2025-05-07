@@ -40604,7 +40604,7 @@
 1605576636 source:c:\users\master\documents\github\ac696\sdk\sdk\cpu\br25\ui_driver\ui_common.c
 	"includes.h"
 
-1605576636 source:c:\users\master\documents\github\ac696\sdk\apps\common\audio\audio_digital_vol.c
+1746605626 source:c:\users\master\documents\github\ac696\sdk\apps\common\audio\audio_digital_vol.c
 	"audio_digital_vol.h"
 	"user_fun_cfg.h"
 	"application/audio_dig_vol.h"
@@ -40903,7 +40903,7 @@
 
 1605576636 c:\users\master\documents\github\ac696\sdk\apps\soundbox\board\br25\user_fun\user_config.h
 
-1605576636 c:\users\master\documents\github\ac696\sdk\apps\soundbox\board\br25\board_ac6966b\user_ac6966b_cfg.h
+1746610327 c:\users\master\documents\github\ac696\sdk\apps\soundbox\board\br25\board_ac6966b\user_ac6966b_cfg.h
 
 1605576636 c:\users\master\documents\github\ac696\sdk\apps\soundbox\board\br25\board_ac6965e\user_ac6965e_cfg.h
 

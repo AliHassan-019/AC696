@@ -3668,9 +3668,9 @@ LOAD C:\JL\pi32\pi32v2-lib\r3\libm.a
 LOAD C:\JL\pi32\pi32v2-lib\r3\libcompiler-rt.a
 OUTPUT(cpu\br25\tools\sdk.elf elf32-pi32v2)
 
-.debug_str      0x00000000    0x541a2
- .debug_str     0x00000000    0x541a2 cpu\br25\tools\sdk.elf.o
-                              0x59b91 (size before relaxing)
+.debug_str      0x00000000    0x53e9e
+ .debug_str     0x00000000    0x53e9e cpu\br25\tools\sdk.elf.o
+                              0x5988d (size before relaxing)
 
 .debug_loc      0x00000000    0x442d8
  .debug_loc     0x00000000    0x442d8 cpu\br25\tools\sdk.elf.o
@@ -3708,11 +3708,11 @@ OUTPUT(cpu\br25\tools\sdk.elf elf32-pi32v2)
 .debug_frame    0x00000000    0x128a4
  .debug_frame   0x00000000    0x128a4 cpu\br25\tools\sdk.elf.o
 
-.debug_line     0x00000000    0x7a1ad
- .debug_line    0x00000000    0x79e1d cpu\br25\tools\sdk.elf.o
- .debug_line    0x00079e1d      0x104 include_lib/liba/br25/cpu.a(startup.o)
- .debug_line    0x00079f21      0x1da include_lib/liba/br25/cpu.a(fm_dem.o)
- .debug_line    0x0007a0fb       0xb2 include_lib/liba/br25/system.a(port_asm_mmu.o)
+.debug_line     0x00000000    0x79d12
+ .debug_line    0x00000000    0x79982 cpu\br25\tools\sdk.elf.o
+ .debug_line    0x00079982      0x104 include_lib/liba/br25/cpu.a(startup.o)
+ .debug_line    0x00079a86      0x1da include_lib/liba/br25/cpu.a(fm_dem.o)
+ .debug_line    0x00079c60       0xb2 include_lib/liba/br25/system.a(port_asm_mmu.o)
 
 .debug_aranges  0x00000000       0x68
  .debug_aranges
