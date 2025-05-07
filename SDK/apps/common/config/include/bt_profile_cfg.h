@@ -19,6 +19,10 @@
 #define USER_SUPPORT_PROFILE_SPP    1
 #endif
 
+//――――――――― 打开HFP通话功能 ―――――――――
+#undef  USER_SUPPORT_PROFILE_HFP
+#define USER_SUPPORT_PROFILE_HFP    1
+
 //ble demo的例子
 #define DEF_BLE_DEMO_NULL                 0 //ble 没有使能
 #define DEF_BLE_DEMO_ADV                  1 //only adv,can't connect

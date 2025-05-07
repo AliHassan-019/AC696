@@ -180,7 +180,7 @@ int update_result_deal()
 #ifdef UPDATE_VOICE_REMIND
         if (result == UPDATA_SUCC) {
             puts("<<<<<<UPDATA_SUCC");
-            app_audio_set_volume(APP_AUDIO_STATE_WTONE, get_max_sys_vol(), 1);
+            app_audio_set_volume(APP_AUDIO_STATE_WTONE, get_max_sys_vol() / 2, 1);
             //tone_play_index(IDEX_TONE_NORMAL, 1);
             tone_play(TONE_SIN_NORMAL, 1);
             /* os_time_dly(25); */
