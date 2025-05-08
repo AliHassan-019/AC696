@@ -40849,13 +40849,13 @@
 	"board_ac6965e/user_ac6965e_cfg.h"
 	"board_ac6969d_demo/user_ac6969d_cfg.h"
 
-1746602199 c:\users\master\documents\github\ac696\sdk\apps\soundbox\board\br25\board_ac6966b\board_ac6966b_cfg.h
+1746687222 c:\users\master\documents\github\ac696\sdk\apps\soundbox\board\br25\board_ac6966b\board_ac6966b_cfg.h
 	"usb_std_class_def.h"
 	"app_config.h"
 
 1605576636 c:\users\master\documents\github\ac696\sdk\apps\common\usb\usb_std_class_def.h
 
-1605576636 c:\users\master\documents\github\ac696\sdk\apps\soundbox\include\app_config.h
+1746623746 c:\users\master\documents\github\ac696\sdk\apps\soundbox\include\app_config.h
 	"board_config.h"
 	"usb_common_def.h"
 	"btcontroller_mode.h"
@@ -45808,7 +45808,7 @@
 	"asm/power_interface.h"
 	"jiffies.h"
 
-1605576636 source:c:\users\master\documents\github\ac696\sdk\cpu\br25\audio_common\app_audio.c
+1746681957 source:c:\users\master\documents\github\ac696\sdk\cpu\br25\audio_common\app_audio.c
 	"system/includes.h"
 	"media/includes.h"
 	"app_config.h"
