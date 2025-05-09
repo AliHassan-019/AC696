@@ -11,14 +11,14 @@
 #if TCFG_APP_BT_EN
 const u16 bt_key_io_table[KEY_IO_NUM_MAX][KEY_EVENT_MAX] = {
     //单击             //长按          //hold         //抬起            //双击                //三击
-    [0] = {
+    [0] = {\\ PB1
         KEY_MUSIC_PP,	KEY_CALL_HANG_UP,	KEY_NULL,	KEY_NULL,	KEY_CALL_LAST_NO,	KEY_NULL
     },
-    [1] = {
+    [1] = {\\PB0
         KEY_MUSIC_NEXT,	KEY_VOL_UP,			KEY_VOL_UP,	KEY_NULL,	KEY_NULL,			KEY_NULL
     },
-    [2] = {
-        KEY_MUSIC_NEXT,	KEY_VOL_UP,			KEY_VOL_UP,	KEY_NULL,	KEY_NULL,			KEY_NULL
+    [2] = {\\PB2
+        KEY_MUSIC_PREV,	KEY_VOL_DOWN,			KEY_VOL_DOWN,	KEY_NULL,	KEY_NULL,			KEY_NULL
     },
     [3] = {
         KEY_CHANGE_MODE, KEY_NULL,			KEY_NULL,	KEY_NULL,	KEY_NULL,			KEY_NULL

@@ -216,7 +216,7 @@
 //*********************************************************************************//
 //                                 iokey 配置                                      //
 //*********************************************************************************//
-#define TCFG_IOKEY_ENABLE					ENABL_THIS_MOUDLE //是否使能IO按键
+#define TCFG_IOKEY_ENABLE					ENABLE_THIS_MOUDLE //是否使能IO按键
 
 #define TCFG_IOKEY_POWER_CONNECT_WAY		ONE_PORT_TO_LOW    //按键一端接低电平一端接IO
 
