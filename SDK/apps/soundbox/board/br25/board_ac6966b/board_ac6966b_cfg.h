@@ -100,9 +100,9 @@
 //                                  充电参数配置                                   //
 //*********************************************************************************//
 //是否支持芯片内置充电
-#define TCFG_CHARGE_ENABLE					0//ENABLE_THIS_MOUDLE
+#define TCFG_CHARGE_ENABLE					ENABLE_THIS_MOUDLE
 //是否支持开机充电
-#define TCFG_CHARGE_POWERON_ENABLE			0//ENABLE
+#define TCFG_CHARGE_POWERON_ENABLE			ENABLE
 //是否支持拔出充电自动开机功能
 #define TCFG_CHARGE_OFF_POWERON_NE			0//ENABLE
 
@@ -157,7 +157,7 @@
 #define TCFG_UDISK_ENABLE 0
 #endif
 
-#define TCFG_USB_PORT_CHARGE            DISABLE
+#define TCFG_USB_PORT_CHARGE            ENABLE
 
 #define TCFG_USB_DM_MULTIPLEX_WITH_SD_DAT0       DISABLE
 #if TCFG_USB_DM_MULTIPLEX_WITH_SD_DAT0

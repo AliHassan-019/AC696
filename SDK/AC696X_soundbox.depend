@@ -40849,7 +40849,7 @@
 	"board_ac6965e/user_ac6965e_cfg.h"
 	"board_ac6969d_demo/user_ac6969d_cfg.h"
 
-1747050543 c:\users\master\documents\github\ac696\sdk\apps\soundbox\board\br25\board_ac6966b\board_ac6966b_cfg.h
+1747117586 c:\users\master\documents\github\ac696\sdk\apps\soundbox\board\br25\board_ac6966b\board_ac6966b_cfg.h
 	"usb_std_class_def.h"
 	"app_config.h"
 
@@ -43370,7 +43370,7 @@
 	"app_config.h"
 	"app_task.h"
 
-1746690095 source:c:\users\master\documents\github\ac696\sdk\apps\soundbox\board\br25\board_ac6966b\board_ac6966b.c
+1747052778 source:c:\users\master\documents\github\ac696\sdk\apps\soundbox\board\br25\board_ac6966b\board_ac6966b.c
 	"gpio.h"
 	"app_config.h"
 	"system/includes.h"
@@ -43409,7 +43409,7 @@
 	"board_config.h"
 	"app_task.h"
 
-1746690095 source:c:\users\master\documents\github\ac696\sdk\apps\soundbox\board\br25\board_ac6966b\key_table\iokey_table.c
+1747053220 source:c:\users\master\documents\github\ac696\sdk\apps\soundbox\board\br25\board_ac6966b\key_table\iokey_table.c
 	"key_event_deal.h"
 	"key_driver.h"
 	"app_config.h"
