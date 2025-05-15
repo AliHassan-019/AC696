@@ -144,7 +144,7 @@ int app_power_event_handler(struct device_event *dev)
         break;
     case POWER_EVENT_POWER_WARNING:
         puts("POWER_EVENT_POWER_WARNING power manage\n");
-        ui_update_status(STATUS_LOWPOWER);
+        ui_update_status(STATUS_LOWPOWER);        
         /* tone_play(TONE_LOW_POWER); */
         STATUS *p_tone = get_tone_config();
         tone_play_index(p_tone->lowpower, 0);
@@ -158,7 +158,7 @@ int app_power_event_handler(struct device_event *dev)
 #endif
         //低电关机需要关闭sdgp引脚供电设备
         user_power_off_class(1);
-
+        
         soft_poweroff_mode(1);  ///强制关机
         sys_enter_soft_poweroff(NULL);
 #else
@@ -220,7 +220,7 @@ u16 user_get_vbat_level(u16 level){
             sam+=save_table_old[j];
             sam/=2;
         }
-
+        
         if(save_table_old[j]>max){
             max = save_table_old[j];
         }
@@ -238,15 +238,15 @@ u16 user_get_vbat_level(u16 level){
 u16 get_vbat_level(void)
 {
     u16 vbat_tp = 0;
-    #if (defined(USER_VBAT_CHECK_EN) && USER_VBAT_CHECK_EN)
-    vbat_tp = user_fun_get_vbat();
-    #else
-    vbat_tp = (adc_get_voltage(AD_CH_VBAT) * 4 / 10);
-    #endif
-    // vbat_tp = user_get_vbat_level(vbat_tp);
-    // printf(">>>>>>>>>> vbat vol %04d\n",vbat_tp);
-    //return 370;     //debug
-    return vbat_tp;
+    // #if (defined(USER_VBAT_CHECK_EN) && USER_VBAT_CHECK_EN)
+    // vbat_tp = user_fun_get_vbat();
+    // #else
+     vbat_tp = (adc_get_voltage(AD_CH_VBAT) * 4 / 10);
+    // #endif
+    // // vbat_tp = user_get_vbat_level(vbat_tp);
+    // // printf(">>>>>>>>>> vbat vol %04d\n",vbat_tp);
+    ///return 370;     //debug
+     return vbat_tp;
 }
 
 __attribute__((weak)) u8 remap_calculate_vbat_percent(u16 bat_val)
@@ -448,7 +448,7 @@ void vbat_check(void *priv)
         tp_low_war_cnt = 0;
         low_warn_cnt = 0;
         low_off_cnt = 0;
-
+  
     }
 #if TCFG_CHARGE_ENABLE
     if (bat_val >= CHARGE_CCVOL_V) {
@@ -458,7 +458,7 @@ void vbat_check(void *priv)
     // printf("bv:%d, bl:%d , vol:%d\n", bat_val, cur_battery_level, app_audio_get_volume(APP_AUDIO_STATE_MUSIC));
     if(low_off_cnt || low_warn_cnt || tp_low_war_cnt || low_dow_sys_vol_cnt){
         printf("                    power 0ff %d  %d  %d %d %d \n",bat_val,tp_low_war_cnt,low_warn_cnt,low_off_cnt,app_audio_get_volume(APP_AUDIO_STATE_MUSIC));
-    }
+    }    
 
     /* log_info("unit_cnt:%d\n", unit_cnt); */
 
@@ -477,7 +477,7 @@ void vbat_check(void *priv)
                         sys_timer_del(vbat_timer);
                         vbat_timer = 0;
                     }
-
+                    
                     if (lowpower_timer) {
                         sys_timer_del(lowpower_timer);
                         lowpower_timer = 0 ;
@@ -500,11 +500,11 @@ void vbat_check(void *priv)
                         // lowpower_timer = sys_timer_add((void *)POWER_EVENT_POWER_WARNING, (void (*)(void *))power_event_to_user, LOW_POWER_WARN_TIME);
                     }
                 }
-
+                
                 user_down_sys_vol_cnt(10);
 
                 //20s 播一次 5次之后关机
-
+                
                 static u32 tone_warn_time = 0;
                 if((timer_get_sec()-tone_warn_time)>20){
                     tone_warn_time = timer_get_sec();
@@ -519,7 +519,7 @@ void vbat_check(void *priv)
                             sys_timer_del(vbat_timer);
                             vbat_timer = 0;
                         }
-
+                        
                     }else{
                         user_low_power_show(2);//低电闪烁
                         power_event_to_user(POWER_EVENT_POWER_WARNING);
@@ -533,7 +533,7 @@ void vbat_check(void *priv)
                 user_down_sys_vol_cnt(20);
 
             } else {
-
+                
                 power_normal_cnt++;
                 low_voice_cnt = 0;
                 low_power_cnt = 0;

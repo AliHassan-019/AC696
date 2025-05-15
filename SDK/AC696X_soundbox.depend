@@ -40849,7 +40849,7 @@
 	"board_ac6965e/user_ac6965e_cfg.h"
 	"board_ac6969d_demo/user_ac6969d_cfg.h"
 
-1747117586 c:\users\master\documents\github\ac696\sdk\apps\soundbox\board\br25\board_ac6966b\board_ac6966b_cfg.h
+1747299127 c:\users\master\documents\github\ac696\sdk\apps\soundbox\board\br25\board_ac6966b\board_ac6966b_cfg.h
 	"usb_std_class_def.h"
 	"app_config.h"
 
@@ -43215,7 +43215,7 @@
 	"user_fun_cfg.h"
 	"debug.h"
 
-1746690095 c:\users\master\documents\github\ac696\sdk\apps\soundbox\include\app_power_manage.h
+1747303956 c:\users\master\documents\github\ac696\sdk\apps\soundbox\include\app_power_manage.h
 	"typedef.h"
 	"system/event.h"
 
@@ -43910,7 +43910,7 @@
 	"typedef.h"
 	"JL_rcsp_protocol.h"
 
-1746690095 source:c:\users\master\documents\github\ac696\sdk\apps\soundbox\common\init.c
+1747299270 source:c:\users\master\documents\github\ac696\sdk\apps\soundbox\common\init.c
 	"app_config.h"
 	"system/includes.h"
 	"asm/charge.h"
@@ -44032,7 +44032,7 @@
 1746690095 c:\users\master\documents\github\ac696\sdk\apps\soundbox\include\task_manager\bt\bt_ble.h
 	"typedef.h"
 
-1746690095 source:c:\users\master\documents\github\ac696\sdk\apps\soundbox\power_manage\app_power_manage.c
+1747303603 source:c:\users\master\documents\github\ac696\sdk\apps\soundbox\power_manage\app_power_manage.c
 	"system/includes.h"
 	"app_power_manage.h"
 	"app_main.h"
@@ -44767,7 +44767,7 @@
 	"btstack/avctp_user.h"
 	"pitchshifter/pitchshifter_api.h"
 
-1746690095 source:c:\users\master\documents\github\ac696\sdk\apps\soundbox\task_manager\app_common.c
+1747296794 source:c:\users\master\documents\github\ac696\sdk\apps\soundbox\task_manager\app_common.c
 	"common/app_common.h"
 	"app_task.h"
 	"app_main.h"
