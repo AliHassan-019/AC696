@@ -27,7 +27,7 @@
 #define USER_SDK_BUG_2  1//linein 模式下 采用dac L进 dac R出的方式，进linein之后声音小
 #define USER_SDK_BUG_5  1//bt、FM模式提示音为MP3异常
 
-#define USER_BT_VBAT_DISPLAY    0//手机电量显示 但不要通话功能  需要打开电量显示宏 BT_SUPPORT_DISPLAY_BAT 与通话协议宏 USER_SUPPORT_PROFILE_HFP
+#define USER_BT_VBAT_DISPLAY    1//手机电量显示 但不要通话功能  需要打开电量显示宏 BT_SUPPORT_DISPLAY_BAT 与通话协议宏 USER_SUPPORT_PROFILE_HFP
 #define USER_FM_MODE_SYS_VOL    20//进FM 大于此音量设置为此音量 退出时恢复
 
 #define USER_FIRST_BOOT_VOL     (SYS_MAX_VOL*2/3)//first boot 第一次上电开机音量

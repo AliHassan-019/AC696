@@ -12,23 +12,18 @@
 const u16 bt_key_io_table[KEY_IO_NUM_MAX][KEY_EVENT_MAX] = {
     //单击 click             //长按long press          //hold         //抬起 Lift           //双击 Double               //三击 Triple
     [0] = {
-        KEY_MUSIC_PP,	KEY_CALL_HANG_UP,	KEY_NULL,	KEY_NULL,	KEY_CALL_LAST_NO,	KEY_NULL
+        KEY_MUSIC_PP,       // Single Tap
+        KEY_CALL_HANG_UP,   // Long Press 
+        KEY_VOL_UP,         // Hold 
+        KEY_NULL,           // Release
+        KEY_CALL_ANSWER,    // Double Tap
+        KEY_POWEROFF        // Triple Tap 
     },
-    [1] = {
-        KEY_POWEROFF,	KEY_NULL,			KEY_POWEROFF_HOLD,	KEY_NULL,	KEY_NULL,			KEY_NULL
-    },
-    [2] = {
-        KEY_MUSIC_NEXT,	KEY_VOL_DOWN,			KEY_VOL_DOWN,	KEY_NULL,	KEY_NULL,			KEY_NULL
-    },
-    [3] = {
-        KEY_MUSIC_NEXT,	KEY_VOL_UP,			KEY_VOL_UP,	KEY_NULL,	KEY_NULL,			KEY_NULL
-    },
-    [4] = {
-        KEY_NULL,		KEY_NULL,			KEY_NULL,	KEY_NULL,	KEY_NULL,			KEY_NULL
-    },
-    [5] = {
-        KEY_NULL,		KEY_NULL,			KEY_NULL,	KEY_NULL,	KEY_NULL,			KEY_NULL
-    },
+    [1] = {KEY_NULL},
+    [2] = {KEY_NULL},
+    [3] = {KEY_NULL},
+    [4] = {KEY_NULL},
+    [5] = {KEY_NULL},
 };
 #endif
 

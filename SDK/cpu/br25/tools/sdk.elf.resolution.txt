@@ -2203,6 +2203,7 @@ obj/Release/apps/soundbox/task_manager/bt/bt.o
 -r=obj/Release/apps/soundbox/task_manager/bt/bt.o,__set_user_background_goback,l
 -r=obj/Release/apps/soundbox/task_manager/bt/bt.o,__set_simple_pair_param,l
 -r=obj/Release/apps/soundbox/task_manager/bt/bt.o,lmp_set_sniff_disable,l
+-r=obj/Release/apps/soundbox/task_manager/bt/bt.o,__set_disable_sco_flag,l
 -r=obj/Release/apps/soundbox/task_manager/bt/bt.o,bt_background_event_handler_filter,pl
 -r=obj/Release/apps/soundbox/task_manager/bt/bt.o,bt_background_event_handler,pl
 -r=obj/Release/apps/soundbox/task_manager/bt/bt.o,bt_key_event_handler,pl
@@ -2547,6 +2548,7 @@ obj/Release/apps/soundbox/task_manager/bt/bt_switch_fun.o
 -r=obj/Release/apps/soundbox/task_manager/bt/bt_switch_fun.o,sys_key_event_enable,l
 -r=obj/Release/apps/soundbox/task_manager/bt/bt_switch_fun.o,sys_auto_shut_down_enable,l
 -r=obj/Release/apps/soundbox/task_manager/bt/bt_switch_fun.o,sys_auto_sniff_controle,l
+-r=obj/Release/apps/soundbox/task_manager/bt/bt_switch_fun.o,__set_disable_sco_flag,l
 -r=obj/Release/apps/soundbox/task_manager/bt/bt_switch_fun.o,user_get_bt_init_ok,pl
 -r=obj/Release/apps/soundbox/task_manager/bt/bt_switch_fun.o,bt_task_close,pl
 -r=obj/Release/apps/soundbox/task_manager/bt/bt_switch_fun.o,bt_direct_init,pl

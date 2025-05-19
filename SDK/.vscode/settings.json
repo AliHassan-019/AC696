@@ -7,7 +7,6 @@
         "app_task.h": "c",
         "key_driver.h": "c",
         "key_event_deal.h": "c",
-        "gpio.h": "c",
-        "avctp_user.h": "c"
+        "gpio.h": "c"
     }
 }
