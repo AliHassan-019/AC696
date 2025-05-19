@@ -116,7 +116,6 @@ void app_main()
     }
 
     user_fun_init();
-    
     app_task_loop();
 }
 

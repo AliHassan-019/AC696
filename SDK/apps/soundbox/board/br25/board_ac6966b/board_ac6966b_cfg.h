@@ -25,9 +25,9 @@
 //                                  app 配置                                       //
 //*********************************************************************************//
 #define TCFG_APP_BT_EN			            1
-#define TCFG_APP_MUSIC_EN			        1
-#define TCFG_APP_LINEIN_EN					1
-#define TCFG_APP_FM_EN					    1
+#define TCFG_APP_MUSIC_EN			        0
+#define TCFG_APP_LINEIN_EN					0
+#define TCFG_APP_FM_EN					    0
 #define TCFG_APP_PC_EN					    0//1
 #define TCFG_APP_RTC_EN					    0
 #define TCFG_APP_RECORD_EN				    0
@@ -500,15 +500,15 @@ DAC硬件上的连接方式,可选的配置：
 
 #else
 
-#define TCFG_PWMLED_ENABLE					DISABLE_THIS_MOUDLE			//是否支持PMW LED推灯模块
+#define TCFG_PWMLED_ENABLE					ENABLE_THIS_MOUDLE			//是否支持PMW LED推灯模块
 #define TCFG_PWMLED_IOMODE					LED_ONE_IO_MODE				//LED模式，单IO还是两个IO推灯
-#define TCFG_PWMLED_PIN						IO_PORTB_00					//LED使用的IO口
+#define TCFG_PWMLED_PIN						IO_PORTB_04					//LED使用的IO口
 
 #endif
 //*********************************************************************************//
 //                                  UI 配置                                        //
 //*********************************************************************************//
-#define TCFG_UI_ENABLE 						ENABLE_THIS_MOUDLE 	//UI总开关
+#define TCFG_UI_ENABLE 						0 	//UI总开关
 #define CONFIG_UI_STYLE                     STYLE_JL_LED7
 #define TCFG_UI_LED7_ENABLE 			 	ENABLE_THIS_MOUDLE 	//UI使用LED7显示
 // #define TCFG_UI_LCD_SEG3X9_ENABLE 		ENABLE_THIS_MOUDLE 	//UI使用LCD段码屏显示

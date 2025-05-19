@@ -6,6 +6,7 @@ USER_POWER_INFO user_power_io={
     .vol = 0,
 };
 #endif
+int user_fm_task_init_flag = 0;
 
 void user_message_filtering(int key_event){   
     switch(key_event){
