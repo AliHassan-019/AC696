@@ -153,9 +153,10 @@ static void app_init()
     if (is_ldo5v_wakeup()) { //LDO5V唤醒
         extern u8 get_charge_online_flag(void);
         if (get_charge_online_flag()) { //关机时，充电插入
+            power_set_soft_poweroff();
 
         } else { //关机时，充电拔出
-            power_set_soft_poweroff();
+            //power_set_soft_poweroff();
         }
     }
 #endif
