@@ -273,22 +273,8 @@ static int ui_charging_deal(u8 *status, u8 *power_status, u8 ui_mg_para)
 
         case STATUS_CHARGE_START:
             log_info("[STATUS_CHARGE_START]\n");
-
-            // Flash LED1 briefly (e.g., for ~2 seconds total)
-             if (ui_mg_para == UI_MG_CALL_USER) {
-            sys_ui_var.ui_flash_cnt = 3;             // Number of flashes (1.5s on/off)
-          sys_ui_var.ui_flash_fre = 300;           // Interval (300ms per step)
-            }
-
-            if (sys_ui_var.ui_flash_cnt) {
-                if (sys_ui_var.ui_flash_cnt % 2) {
-                ui_user_mode_set(STATUS_CHARGE_START, PWM_LED1_OFF, 0);
-              } else {
-                ui_user_mode_set(STATUS_CHARGE_START, PWM_LED1_ON, 0);
-        }
-    }
-    break;
-
+            ui_user_mode_set(STATUS_CHARGE_START, PWM_LED1_ON, 0);
+            break;
 
         case STATUS_CHARGE_FULL:
             log_info("[STATUS_CHARGE_FULL]\n");

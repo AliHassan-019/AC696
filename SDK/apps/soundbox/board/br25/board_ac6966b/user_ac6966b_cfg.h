@@ -21,8 +21,8 @@
 
 #define USER_VBAT_CHECK_EN 1//外部电路检测
 #define USER_LED_EN 1//io led
-#define USER_LED_POR    IO_PORTB_06//LED IO
-#define USER_RGB_EN 1//RGB pb7
+#define USER_LED_POR    IO_PORTB_07//LED IO
+#define USER_RGB_EN 0//RGB pb7
 #define USER_RGB_NUMBER 30//rgb 颗数
 #define USER_RGB_LOOP_MODE  USER_RGB_LOOP_MODE_3//循环模式
 #define USER_EQ_LIVE_UPDATE         1//EQ 旋钮实时更新
@@ -38,6 +38,6 @@
 #define USER_3IO_CHECK_4AD_EN 1//3IO检测4路ad
 #define USER_SYS_VOL_CHECK_EN 0//旋钮控制系统音量 ad检测
 
-#define USER_CHARGE_WAKE_UP 0//充电唤醒
+#define USER_CHARGE_WAKE_UP 1//充电唤醒
 #endif
 #endif

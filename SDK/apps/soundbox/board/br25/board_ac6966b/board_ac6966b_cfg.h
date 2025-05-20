@@ -102,7 +102,7 @@
 //是否支持芯片内置充电
 #define TCFG_CHARGE_ENABLE					ENABLE_THIS_MOUDLE
 //是否支持开机充电
-#define TCFG_CHARGE_POWERON_ENABLE			0//ENABLE
+#define TCFG_CHARGE_POWERON_ENABLE			ENABLE
 //是否支持拔出充电自动开机功能
 #define TCFG_CHARGE_OFF_POWERON_NE			ENABLE
 

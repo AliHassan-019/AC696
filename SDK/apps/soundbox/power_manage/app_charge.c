@@ -212,20 +212,20 @@ void charge_ldo5v_in_deal(void)
 {
     log_info("%s\n", __FUNCTION__);
 
-
 #if TCFG_IRSENSOR_ENABLE
-    if (get_bt_tws_connect_status()) {
+    if (get_bt_tws_connect_status())
+    {
         tws_api_sync_call_by_uuid('T', SYNC_CMD_EARPHONE_CHAREG_START, 300);
     }
 #endif
 
-    //插入交换
+    // 插入交换
     power_event_to_user(POWER_EVENT_POWER_CHANGE);
 
     charge_full_flag = 0;
 
 #if TCFG_GSENSOR_ENABLE
-    //入舱关闭gSensor
+    // 入舱关闭gSensor
     gSensor_wkupup_disable();
 #endif
 
@@ -245,7 +245,8 @@ void charge_ldo5v_in_deal(void)
 
 #if TCFG_TEST_BOX_ENABLE
     chargestore_clear_testbox_status();
-    if (charge_err_timer) {
+    if (charge_err_timer)
+    {
         sys_timeout_del(charge_err_timer);
         charge_err_timer = 0;
     }
@@ -255,49 +256,22 @@ void charge_ldo5v_in_deal(void)
     chargestore_shutdown_reset();
 #endif
 
-    if (get_charge_poweron_en() == 0) {
-#if defined(TCFG_CHARGE_KEEP_UPDATA) && TCFG_CHARGE_KEEP_UPDATA
-        if (dual_bank_update_exist_flag_get() || classic_update_task_exist_flag_get()) {
-            return;
-        }
-#endif
-        u8 app = app_get_curr_task();
-        if (app != APP_IDLE_TASK) {
+    // --- FORCE POWER OFF IMMEDIATELY ON CHARGER INSERT ---
+    sys_enter_soft_poweroff(NULL);
 
-#if (TCFG_CHARGESTORE_ENABLE && TCFG_BLE_DEMO_SELECT == DEF_BLE_DEMO_ADV)
-            if (!chargestore_check_going_to_poweroff()) {
-#endif
-                sys_enter_soft_poweroff((void *)1);
-#if (TCFG_CHARGESTORE_ENABLE && TCFG_BLE_DEMO_SELECT == DEF_BLE_DEMO_ADV)
-            } else {
-                log_info("chargestore do poweroff!\n");
-            }
-#endif
-        } else {
-            //添加cpu_reset防止刚开机app还是NULL的时候,进这里导致无法进idle充电
-            extern int cpu_reset_by_soft();
-            if (cpu_reset_by_soft()) {
-                charge_start();
-            } else {
-                cpu_reset();
-            }
-            wdt_init(WDT_32S);
-            log_info("set wdt to 32s!\n");
-        }
-    } else {
-        charge_start();
-    }
+    // No further code execution needed here since device should power off immediately.
 }
+
 
 void charge_ldo5v_off_deal(void)
 {
     log_info("%s\n", __FUNCTION__);
 
-
-    //拨出交换
+    // 拨出交换
     power_event_to_user(POWER_EVENT_POWER_CHANGE);
 #if (TCFG_CHARGESTORE_ENABLE && TCFG_USER_TWS_ENABLE)
-    if (TWS_ROLE_SLAVE == tws_api_get_role()) {
+    if (TWS_ROLE_SLAVE == tws_api_get_role())
+    {
         chargestore_set_power_level(0xFF);
     }
 #endif
@@ -306,7 +280,8 @@ void charge_ldo5v_off_deal(void)
     charge_close();
 
     u8 app = app_get_curr_task();
-    if (app == APP_IDLE_TASK) {
+    if (app == APP_IDLE_TASK)
+    {
         ui_update_status(STATUS_CHARGE_LDO5V_OFF);
     }
 
@@ -315,12 +290,14 @@ void charge_ldo5v_off_deal(void)
 #endif
 
 #if TCFG_TEST_BOX_ENABLE
-    if (chargestore_get_testbox_status() && !get_total_connect_dev()) {
+    if (chargestore_get_testbox_status() && !get_total_connect_dev())
+    {
         log_info("<<<<<<<<<<<<<<testbox out and bt noconn reset>>>>>>>>>>>>>>>\n");
         cpu_reset();
     }
     chargestore_clear_testbox_status();
-    if (charge_err_timer) {
+    if (charge_err_timer)
+    {
         sys_timeout_del(charge_err_timer);
         charge_err_timer = 0;
     }
@@ -330,54 +307,11 @@ void charge_ldo5v_off_deal(void)
     chargestore_shutdown_reset();
 #endif
 
-    if ((get_charge_poweron_en() == 0)) {
+    // --- DO NOT SOFT POWER OFF HERE! ---
+    // Just return and allow chip to power on automatically on charger removal
 
-        wdt_init(WDT_4S);
-        log_info("set wdt to 4s!\n");
-#if TCFG_CHARGESTORE_ENABLE
-        if (chargestore_get_power_status()) {
-#endif
-#if TCFG_CHARGE_OFF_POWERON_NE
-            log_info("ldo5v off,task switch to BT\n");
-            app_var.play_poweron_tone = 0;
-#if TCFG_SYS_LVD_EN
-            extern void vbat_timer_update(u32 msec);
-            vbat_check_init();
-            vbat_timer_update(20);
-#endif
-            if ((app != APP_BT_TASK) && (app_var.goto_poweroff_flag == 0)) {
-#if TCFG_SYS_LVD_EN
-                if (get_vbat_need_shutdown() == FALSE) {
-                    task_switch_to_bt();
-                } else {
-                    log_info("ldo5v off,lowpower,need enter softpoweroff\n");
-                    power_set_soft_poweroff();
-                }
-#else //TCFG_SYS_LVD_EN
-                task_switch_to_bt();
-#endif //TCFG_SYS_LVD_EN
-            }
-#else //TCFG_CHARGE_OFF_POWERON_NE
-            log_info("ldo5v off,enter softpoweroff\n");
-            power_set_soft_poweroff();
-#endif //TCFG_CHARGE_OFF_POWERON_NE
-#if TCFG_CHARGESTORE_ENABLE
-        } else {
-            log_info("ldo5v off,enter softpoweroff\n");
-            if (app != APP_IDLE_TASK) {
-                sys_enter_soft_poweroff(NULL);//软关机
-            } else {
-                power_set_soft_poweroff();
-            }
-        }
-#endif
-    } else {
-        if (app == APP_IDLE_TASK) {
-            power_set_soft_poweroff();
-        }
-    }
 #if TCFG_GSENSOR_ENABLE
-    //出舱使能gSensor
+    // 出舱使能gSensor
     gSensor_wkupup_enable();
 #endif
 
@@ -391,6 +325,7 @@ void charge_ldo5v_off_deal(void)
     gx8002_module_resumed();
 #endif /* #if TCFG_GX8002_NPU_ENABLE */
 }
+
 
 int app_charge_event_handler(struct device_event *dev)
 {

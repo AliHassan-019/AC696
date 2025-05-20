@@ -1065,28 +1065,33 @@ static void board_power_wakeup_init(void)
 {
     power_wakeup_init(&wk_param);
 
+    // Disable key wakeup because PA6 not connected or not desired
     key_wakeup_disable();
+
 #if TCFG_POWER_ON_NEED_KEY
     extern u8 power_reset_src;
     if ((power_reset_src & BIT(0)) || (power_reset_src & BIT(1))) {
 #if TCFG_CHARGE_ENABLE
-        log_info("is ldo5v wakeup:%d\n",is_ldo5v_wakeup());
+        log_info("is ldo5v wakeup:%d\n", is_ldo5v_wakeup());
         if (is_ldo5v_wakeup()) {
-            return;
+            return;  // Charger insertion wakeup - power on
         }
         if (get_ldo5v_online_hw()) {
-            return;
+            return;  // Charger present - power on
         }
-        /*LDO5V,检测上升沿，用于检测ldoin插入*/
+        // Enable LDO5V wakeup detection (charger wakeup)
         LDO5V_EN(1);
-        LDO5V_EDGE_SEL(0);
+        LDO5V_EDGE_SEL(0);       // 0 = rising edge detection (change to 1 if hardware needs falling)
         LDO5V_PND_CLR();
         LDO5V_EDGE_WKUP_EN(1);
 #endif
         power_set_callback(TCFG_LOWPOWER_LOWPOWER_SEL, sleep_enter_callback, sleep_exit_callback, board_set_soft_poweroff);
-        power_set_soft_poweroff();
+        power_set_soft_poweroff();  // Soft power off if not charger wakeup
     }
 #endif
 }
+
+
+
 early_initcall(board_power_wakeup_init);
 #endif /* #ifdef CONFIG_BOARD_AC696X_DEMO */

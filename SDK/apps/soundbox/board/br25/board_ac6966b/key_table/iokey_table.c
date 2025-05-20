@@ -14,7 +14,7 @@ const u16 bt_key_io_table[KEY_IO_NUM_MAX][KEY_EVENT_MAX] = {
     [0] = {
         KEY_MUSIC_PP,       // Single Tap
         KEY_CALL_HANG_UP,   // Long Press 
-        KEY_VOL_UP,         // Hold 
+        KEY_POWEROFF,         // Hold 
         KEY_NULL,           // Release
         KEY_CALL_ANSWER,    // Double Tap
         KEY_POWEROFF        // Triple Tap 
