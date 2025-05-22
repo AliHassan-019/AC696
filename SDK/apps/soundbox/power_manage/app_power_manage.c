@@ -238,12 +238,12 @@ u16 user_get_vbat_level(u16 level){
 u16 get_vbat_level(void)
 {
     u16 vbat_tp = 0;
-    //#if (defined(USER_VBAT_CHECK_EN) && USER_VBAT_CHECK_EN)
-    //vbat_tp = user_fun_get_vbat();
-    //#else
+    #if (defined(USER_VBAT_CHECK_EN) && USER_VBAT_CHECK_EN)
+    vbat_tp = user_fun_get_vbat();
+    #else
     vbat_tp = (adc_get_voltage(AD_CH_VBAT) * 4 / 10);
-    //#endif
-    // vbat_tp = user_get_vbat_level(vbat_tp);
+    #endif
+    vbat_tp = user_get_vbat_level(vbat_tp);
     // printf(">>>>>>>>>> vbat vol %04d\n",vbat_tp);
     //return 370;     //debug
     return vbat_tp;

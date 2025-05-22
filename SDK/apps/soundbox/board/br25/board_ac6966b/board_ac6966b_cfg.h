@@ -41,9 +41,9 @@
 //*********************************************************************************//
 //                                 UART配置                                        //
 //*********************************************************************************//
-#define TCFG_UART0_ENABLE					0//ENABLE_THIS_MOUDLE                     //串口打印模块使能
+#define TCFG_UART0_ENABLE					ENABLE_THIS_MOUDLE                     //串口打印模块使能
 #define TCFG_UART0_RX_PORT					NO_CONFIG_PORT                         //串口接收脚配置（用于打印可以选择NO_CONFIG_PORT）
-#define TCFG_UART0_TX_PORT  				IO_PORT_DP//IO_PORT_DP//IO_PORTA_05                            //串口发送脚配置
+#define TCFG_UART0_TX_PORT  				IO_PORTA_05//IO_PORT_DP//IO_PORTA_05                            //串口发送脚配置
 #define TCFG_UART0_BAUDRATE  				1000000                                //串口波特率配置
 
 #ifdef CONFIG_DEBUG_ENABLE
@@ -100,13 +100,13 @@
 //                                  充电参数配置                                   //
 //*********************************************************************************//
 //是否支持芯片内置充电
-#define TCFG_CHARGE_ENABLE					ENABLE_THIS_MOUDLE
+#define TCFG_CHARGE_ENABLE					DISABLE
 //是否支持开机充电
 #define TCFG_CHARGE_POWERON_ENABLE			DISABLE
 //是否支持拔出充电自动开机功能
-#define TCFG_CHARGE_OFF_POWERON_NE			ENABLE
+#define TCFG_CHARGE_OFF_POWERON_NE			DISABLE
 
-#define TCFG_CHARGE_FULL_V					CHARGE_FULL_V_4202
+#define TCFG_CHARGE_FULL_V					CHARGE_FULL_V_4350
 
 #define TCFG_CHARGE_FULL_MA					CHARGE_FULL_mA_10
 

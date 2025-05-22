@@ -40849,7 +40849,7 @@
 	"board_ac6965e/user_ac6965e_cfg.h"
 	"board_ac6969d_demo/user_ac6969d_cfg.h"
 
-1747724914 c:\users\master\documents\github\ac696\sdk\apps\soundbox\board\br25\board_ac6966b\board_ac6966b_cfg.h
+1747908307 c:\users\master\documents\github\ac696\sdk\apps\soundbox\board\br25\board_ac6966b\board_ac6966b_cfg.h
 	"usb_std_class_def.h"
 	"app_config.h"
 
@@ -41555,7 +41555,7 @@
 1747110082 c:\users\master\documents\github\ac696\sdk\include_lib\btstack\btstack_typedef.h
 	"typedef.h"
 
-1747110082 c:\users\master\documents\github\ac696\sdk\apps\soundbox\include\app_main.h
+1747905355 c:\users\master\documents\github\ac696\sdk\apps\soundbox\include\app_main.h
 
 1747110082 c:\users\master\documents\github\ac696\sdk\apps\common\music\music_player.h
 	"system/app_core.h"
@@ -43197,7 +43197,7 @@
 1747110082 c:\users\master\documents\github\ac696\sdk\include_lib\media\media_develop\media\cpu\br25\commproc.h
 	"generic/typedef.h"
 
-1747721656 source:c:\users\master\documents\github\ac696\sdk\apps\soundbox\app_main.c
+1747905351 source:c:\users\master\documents\github\ac696\sdk\apps\soundbox\app_main.c
 	"system/includes.h"
 	"app_config.h"
 	"asm/pwm_led.h"
@@ -43215,7 +43215,7 @@
 	"user_fun_cfg.h"
 	"debug.h"
 
-1747110082 c:\users\master\documents\github\ac696\sdk\apps\soundbox\include\app_power_manage.h
+1747905345 c:\users\master\documents\github\ac696\sdk\apps\soundbox\include\app_power_manage.h
 	"typedef.h"
 	"system/event.h"
 
@@ -43370,7 +43370,7 @@
 	"app_config.h"
 	"app_task.h"
 
-1747717847 source:c:\users\master\documents\github\ac696\sdk\apps\soundbox\board\br25\board_ac6966b\board_ac6966b.c
+1747905733 source:c:\users\master\documents\github\ac696\sdk\apps\soundbox\board\br25\board_ac6966b\board_ac6966b.c
 	"gpio.h"
 	"app_config.h"
 	"system/includes.h"
@@ -43910,7 +43910,7 @@
 	"typedef.h"
 	"JL_rcsp_protocol.h"
 
-1747725191 source:c:\users\master\documents\github\ac696\sdk\apps\soundbox\common\init.c
+1747737493 source:c:\users\master\documents\github\ac696\sdk\apps\soundbox\common\init.c
 	"app_config.h"
 	"system/includes.h"
 	"asm/charge.h"
@@ -43929,7 +43929,7 @@
 	"audio_config.h"
 	"tone_player.h"
 
-1747110082 source:c:\users\master\documents\github\ac696\sdk\apps\soundbox\common\user_cfg.c
+1747898636 source:c:\users\master\documents\github\ac696\sdk\apps\soundbox\common\user_cfg.c
 	"app_config.h"
 	"user_cfg.h"
 	"fs.h"
@@ -43979,7 +43979,7 @@
 	"system/includes.h"
 	"update_loader_download.h"
 
-1747734736 source:c:\users\master\documents\github\ac696\sdk\apps\soundbox\power_manage\app_charge.c
+1747738809 source:c:\users\master\documents\github\ac696\sdk\apps\soundbox\power_manage\app_charge.c
 	"app_config.h"
 	"asm/charge.h"
 	"asm/pwm_led.h"
@@ -44032,7 +44032,7 @@
 1747110082 c:\users\master\documents\github\ac696\sdk\apps\soundbox\include\task_manager\bt\bt_ble.h
 	"typedef.h"
 
-1747721675 source:c:\users\master\documents\github\ac696\sdk\apps\soundbox\power_manage\app_power_manage.c
+1747905329 source:c:\users\master\documents\github\ac696\sdk\apps\soundbox\power_manage\app_power_manage.c
 	"system/includes.h"
 	"app_power_manage.h"
 	"app_main.h"
@@ -45796,7 +45796,7 @@
 	"generic/log.h"
 	"app_config.h"
 
-1747110082 source:c:\users\master\documents\github\ac696\sdk\cpu\br25\adc_api.c
+1747895894 source:c:\users\master\documents\github\ac696\sdk\cpu\br25\adc_api.c
 	"typedef.h"
 	"asm/clock.h"
 	"asm/adc_api.h"
